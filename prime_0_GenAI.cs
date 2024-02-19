@@ -1,41 +1,21 @@
 using System;
 
-class Prime_Number
+static void Main(string[] args)
 {
-
-    int checkPrime(int num)
+    for (int I = 2; I < 100; I++)
     {
-        if (num < 2)
-        {
-            return 0;
-        }
-        else
-        {
-            int x = num / 2;
-            for (int i = 2; i < x; i++)
-            {
-                if (num % i == 0)
-                {
-                    return 0;
-                }
-            }
-        }
-
-        return 1;
-    }
-    int main()
-    {
-        int a = 1;
-        int b = 100;
-
-        for (int i = a; i <= b; i++)
-        {
-            if (checkPrime(i))
-                cout << i << " ";
-        }
-
-        return 0;
+        if (Is_Primer_Number(I) == true)
+            Console.WriteLine(I);
     }
 
-   
+    Console.ReadKey();
+}
+
+static bool Is_Primer_Number(int Number)
+{
+    for (int I = 2; I < Number; I++)
+    {
+        if ((Number % I) == 0) return false;
+    }
+    return true;
 }
